@@ -1,0 +1,5 @@
+<img [src]="img__source" alt="avatar"
+    *ngIf="img__source; else else__img">
+<ng-template #else__img>
+    <img src="../../../assets/placeholder.png" alt="" srcset="">
+</ng-template>

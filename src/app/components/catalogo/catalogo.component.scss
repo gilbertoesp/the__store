@@ -1,0 +1,23 @@
+.catalogo__container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+//tablet
+@media screen and (min-width: 40em) and (max-width: 63.9em){
+    .catalogo__container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 15px;
+    }
+}
+
+//desktop
+@media screen and (min-width: 64em){
+    .catalogo__container{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 15px;
+    }
+}
