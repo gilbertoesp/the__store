@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { TiendaService } from 'src/app/services/tienda.service';
 
@@ -8,7 +8,7 @@ import { TiendaService } from 'src/app/services/tienda.service';
   styleUrls: ['./catalogo.component.scss']
 })
 
-export class CatalogoComponent {
+export class CatalogoComponent implements OnInit{
   public productos: Product[] = [];
   
   constructor(
