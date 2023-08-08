@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { TiendaService } from 'src/app/services/tienda.service';
 
@@ -8,11 +8,9 @@ import { TiendaService } from 'src/app/services/tienda.service';
   styleUrls: ['./catalogo.component.scss']
 })
 
-export class CatalogoComponent implements OnInit, OnDestroy{
+export class CatalogoComponent implements OnInit{
   public productos: Product[] = [];
-  showProductDetail = false;
-
-
+  
   constructor(
     private tiendaService: TiendaService
   ){}
@@ -22,18 +20,5 @@ export class CatalogoComponent implements OnInit, OnDestroy{
       .subscribe(response => {
         this.productos = response;
       })
-  }
-  ngOnDestroy(): void{
-
-  }
-
-  toggleProductDetail(){
-    this.showProductDetail = !this.showProductDetail;
-  }
-  onShowDetail(id:number){
-    this.tiendaService.getSingle(id)
-      .subscribe(data => {
-        console.log('product',data)
-      });
   }
 }
