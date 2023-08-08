@@ -1,5 +1,20 @@
+<button
+    (click)="toggleProductDetail()"
+>click</button>
 <div class="catalogo__container">
     <app-product
     *ngFor="let producto of productos"
-    [product]="producto"></app-product>
+    [product]="producto"
+    (productDetail)="onShowDetail($event)"
+    ></app-product>
+</div>
+<div class="product-detail"
+    [class.active]="showProductDetail"
+>
+    <div>
+        <button
+        (click)="toggleProductDetail()"
+        >X</button>
+        Contenido
+    </div>
 </div>
