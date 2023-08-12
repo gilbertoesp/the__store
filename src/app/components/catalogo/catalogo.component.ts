@@ -10,7 +10,7 @@ import { TiendaService } from 'src/app/services/tienda.service';
 
 export class CatalogoComponent implements OnInit{
   public productos: Product[] = [];
-  
+  showProductDetail = false;
   constructor(
     private tiendaService: TiendaService
   ){}
@@ -20,5 +20,16 @@ export class CatalogoComponent implements OnInit{
       .subscribe(response => {
         this.productos = response;
       })
+  }
+
+  toggleProductDetail(){
+    this.showProductDetail = !this.showProductDetail;
+  }
+
+  onShowDetail(id: number) {
+    this.tiendaService.getProduct(id)
+    .subscribe(data => {
+      console.log('product', data);
+    })
   }
 }

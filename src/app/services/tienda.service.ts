@@ -5,12 +5,16 @@ import  { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class TiendaService {
-
+  private api = `https://api.escuelajs.co/api/v1/products`
   constructor(
     private http: HttpClient
   ) {   }
 
   getProductos(){
-    return this.http.get<Product[]>(`https://api.escuelajs.co/api/v1/products`)
+    return this.http.get<Product[]>(`${this.api}`);
+  }
+
+  getProduct(id: number){
+    return this.http.get<Product>(`${this.api}/${id}`);
   }
 }
