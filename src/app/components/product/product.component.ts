@@ -11,6 +11,7 @@ export class ProductComponent {
   @Output() showProduct = new EventEmitter<number>();
 
   onShowDetail(){
+    
     this.showProduct.emit(this.product.id);
   }
 }
