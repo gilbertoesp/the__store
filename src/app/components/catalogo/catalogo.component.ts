@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { TiendaService } from 'src/app/services/tienda.service';
 
@@ -10,7 +10,25 @@ import { TiendaService } from 'src/app/services/tienda.service';
 
 export class CatalogoComponent implements OnInit{
   public productos: Product[] = [];
+  public selectedProduct: Product = {
+    id: 0,
+    title: '',
+    description: '',
+    price: 0,
+    images: [],
+    creationAt: '',
+    updatedAt: '',
+    category: {
+      id: 0,
+      name: '',
+      image: '',
+      creationAt: '',
+      updatedAt: ''
+    }
+  };
+  
   showProductDetail = false;
+  
   constructor(
     private tiendaService: TiendaService
   ){}
@@ -27,9 +45,10 @@ export class CatalogoComponent implements OnInit{
   }
 
   onShowDetail(id: number) {
+    this.toggleProductDetail();
     this.tiendaService.getProduct(id)
     .subscribe(data => {
-      console.log('product', data);
+      this.selectedProduct = data;
     })
   }
 }
