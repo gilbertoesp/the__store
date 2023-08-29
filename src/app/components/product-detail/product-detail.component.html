@@ -1,4 +1,9 @@
 <!-- slider recorriendo un producto -->
+<swiper-container>
+    <swiper-slide *ngFor="let img of product.images">
+        <img [src]="img" alt="" srcset="">
+    </swiper-slide>
+</swiper-container>
 
 <!-- titulo -->
 <h3>{{product.title}}</h3>
