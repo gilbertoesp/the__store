@@ -10,6 +10,11 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
+// Swiper config. Register()
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { register } from 'swiper/element/bundle';
+register();
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +30,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
