@@ -10,3 +10,7 @@ export interface Product{
     updatedAt: string;
     category: Category;
 }
+
+export interface CreateProductDTO extends Omit<Product, 'id' | 'category' | 'creationAt' | 'updatedAt'>{
+    categoryId: number;
+}

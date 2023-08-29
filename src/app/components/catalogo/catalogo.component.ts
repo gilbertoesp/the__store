@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Product } from 'src/app/models/product.model';
+import { CreateProductDTO, Product } from 'src/app/models/product.model';
 import { TiendaService } from 'src/app/services/tienda.service';
 
 @Component({
@@ -50,5 +50,22 @@ export class CatalogoComponent implements OnInit{
     .subscribe(data => {
       this.selectedProduct = data;
     })
+  }
+
+  createNewProduct() {
+    const product: CreateProductDTO = {
+      "categoryId": 2,
+      "images": ['https://picsum.photos/300', 'https://picsum.photos/300', 'https://picsum.photos/300'],
+      "title": 'A new product',
+      "price": 1.0,
+      "description": 'A description that describes',
+    }
+    this.tiendaService.createProduct(product)
+      .subscribe(
+        (response) => {
+          console.log('POST request successful!', response);
+          // Handle the response from the server
+        }
+      );
   }
 }
