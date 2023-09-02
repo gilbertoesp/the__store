@@ -9,5 +9,5 @@ import { Product } from 'src/app/models/product.model';
 export class ProductDetailComponent{
   @Input() product!: Product;
   constructor(){}
-
+  
 }

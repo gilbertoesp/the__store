@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { CreateProductDTO, Product } from 'src/app/models/product.model';
+import { UpdateProductDTO, CreateProductDTO, Product } from 'src/app/models/product.model';
 import { TiendaService } from 'src/app/services/tienda.service';
 
 @Component({
@@ -60,12 +60,35 @@ export class CatalogoComponent implements OnInit{
       "price": 1.0,
       "description": 'A description that describes',
     }
-    this.tiendaService.createProduct(product)
+    this.tiendaService.create(product)
       .subscribe(
         (response) => {
           console.log('POST request successful!', response);
           // Handle the response from the server
         }
       );
+  }
+
+  updateProduct(){
+    const cambios: UpdateProductDTO = {
+      title: 'A new title'
+    }
+    const id = this.selectedProduct.id;
+    this.tiendaService.update(id , cambios)
+      .subscribe(data => {
+        const productIndex = this.productos.findIndex(item => item.id === id);
+        this.productos[productIndex] = data;
+        this.selectedProduct = data;
+      });
+  }
+
+  deleteProduct(){
+    const id = this.selectedProduct.id;
+    this.tiendaService.delete(id)
+      .subscribe(() => {
+        const productIndex = this.productos.findIndex(item => item.id === id);
+        this.productos.splice(productIndex, 1);
+        this.showProductDetail = false;
+      })
   }
 }
