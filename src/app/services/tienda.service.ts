@@ -16,8 +16,9 @@ export class TiendaService {
   getProductos(){
     return this.http.get<Product[]>(`${this.api}`);
   }
-  getProductsWithParams(offset: number, limit: number){
-    return this.http.get<Product[]>(`${this.api}`, {params: {offset, limit}})
+
+  getProductsByPage(limit: number, offset: number){
+    return this.http.get<Product[]>(`${this.api}`,{ params: {limit,offset}})
   }
 
   getProduct(id: number){

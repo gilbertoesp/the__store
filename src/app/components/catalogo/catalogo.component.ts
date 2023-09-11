@@ -27,6 +27,8 @@ export class CatalogoComponent implements OnInit{
     }
   };
   
+  limit = 10;
+  offset = 0;
   showProductDetail = false;
   
   constructor(
@@ -34,9 +36,20 @@ export class CatalogoComponent implements OnInit{
   ){}
   
   ngOnInit(): void{
-    this.tiendaService.getProductos()
-      .subscribe(response => {
-        this.productos = response;
+    // this.tiendaService.getProductos()
+    //   .subscribe(response => {
+    //     this.productos = response;
+    //   }) 
+
+    //  USANDO PAGINACION
+    this.loadMore()
+  }
+
+  loadMore(){
+    this.tiendaService.getProductsByPage(this.limit,this.offset)
+      .subscribe(data => {
+        this.productos = this.productos.concat(data);
+        this.offset += this.limit;
       })
   }
 
