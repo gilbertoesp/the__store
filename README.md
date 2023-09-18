@@ -6,11 +6,15 @@
 ## Features
 
 ### Carrito de compras
-    [] Leer `BehavioralSubject` de la libreria RxJS
-    [] Implementar un nuevo servicio `store.service.ts` donde el patron de diseño Observable actue como carrito de compras
-    [] Suscribir nuestros componentes
-    [] Que muestre la cantidad de productos en el carrito y el total de la compra que estamos realizando
-    [] Boton `Agregar al carrito`
+    [x] Leer `BehavioralSubject` de la libreria RxJS
+    [x] Implementar un nuevo servicio `store.service.ts` donde el patron de diseño Observable actue como carrito de compras
+    [x] Suscribir nuestros componentes        [x] Que muestre la cantidad de productos en el carrito (se puede ver desde Angular Dev Tools)
+    [x] Boton `Agregar al carrito` en producto
+
+    [] Desplegable que muestre nuestros productos agregados al carrito (nuevo componente)
+    [] Logo de un carrito en nav para abrir el despleagble
+    [] Lista de productos en formato reducido
+    [] Total al fondo mas IVA y botones (sin funcion) de pasar a pagar
 
 ### Atrapando errores
     [] Utiliza practicas de `catchError` de la libreria RxJS en pipe

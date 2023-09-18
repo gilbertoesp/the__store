@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UpdateProductDTO, CreateProductDTO, Product } from 'src/app/models/product.model';
+import { StoreService } from 'src/app/services/store.service';
 import { TiendaService } from 'src/app/services/tienda.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { TiendaService } from 'src/app/services/tienda.service';
 })
 
 export class CatalogoComponent implements OnInit{
+  private myShoppingCart: Product[] = [];
+  
   public productos: Product[] = [];
   public selectedProduct: Product = {
     id: 0,
@@ -32,8 +35,11 @@ export class CatalogoComponent implements OnInit{
   showProductDetail = false;
   
   constructor(
-    private tiendaService: TiendaService
-  ){}
+    private tiendaService: TiendaService,
+    private storeService: StoreService
+  ){
+    this.myShoppingCart = this.storeService.getShoppingCart();
+  }
   
   ngOnInit(): void{
     // this.tiendaService.getProductos()
@@ -51,6 +57,10 @@ export class CatalogoComponent implements OnInit{
         this.productos = this.productos.concat(data);
         this.offset += this.limit;
       })
+  }
+
+  onAddToShoppingCart(product: Product){
+    this.storeService.addProduct(product);
   }
 
   toggleProductDetail(){
