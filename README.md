@@ -17,9 +17,8 @@
     [] Total al fondo mas IVA y botones (sin funcion) de pasar a pagar
 
 ### Atrapando errores
-    [] Utiliza practicas de `catchError` de la libreria RxJS en pipe
-    [] Describe errores con `HttpErrorResponse` con su status `500` o `404` con `HttpStatusCode`
-    [] Establece medidas de seguridad con `handleErrors()`
+    [x] Utiliza practicas de `catchError` de la libreria RxJS en pipe
+    [x] Describe errores con `HttpErrorResponse` con su status `500` o `404` con `HttpStatusCode`
 
 ### Formato al catalago
     [] Precio en diferente color cuando hover
