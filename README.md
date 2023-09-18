@@ -1,6 +1,56 @@
 # FakeStore
 
+## Iteraciones del desarrollo
+![The Store]('./../src/assets/screenshots/The__Store_sept18.png')
+
 ## Features
+
+### Carrito de compras
+    [] Leer `BehavioralSubject` de la libreria RxJS
+    [] Implementar un nuevo servicio `store.service.ts` donde el patron de diseño Observable actue como carrito de compras
+    [] Suscribir nuestros componentes
+    [] Que muestre la cantidad de productos en el carrito y el total de la compra que estamos realizando
+    [] Boton `Agregar al carrito`
+
+### Atrapando errores
+    [] Utiliza practicas de `catchError` de la libreria RxJS en pipe
+    [] Describe errores con `HttpErrorResponse` con su status `500` o `404` con `HttpStatusCode`
+    [] Establece medidas de seguridad con `handleErrors()`
+
+### Formato al catalago
+    [] Precio en diferente color cuando hover
+    [] Titulo con espaciado y negritas
+    [] Borrar fecha y hora
+    [] Formato al boton Ver detalle, y moverlo al lador derecho
+    [] Tablet breakpoint a 768px
+
+### Modificando un producto
+    [] En Ver Detalle, boton que abra un formulario con los datos del producto a modificar
+    [] Detecta input "touched" y solo manda estos a modificar en el request
+
+### Posting a new product
+    [] Slide invocado desde un boton "Nuevo Producto"
+        [] Form con detalles del producto nuevo a crear
+        [] Boton POST, que verifique los datos antes de enviar la request
+        [] Boton POST, que actualice los articulos mostrados en grid
+
+### Borrando un producto
+    [] Establecer un input de confirmacion donde tengas que escribir el nombre del producto que quieres eliminar
+    [] boton de borrar producto en formato Danger
+    [] Confirmar el borrado del producto
+    [] Actualizar catalogo
+
+### Ver Detalle
+[x] Single Product
+    [x] Side bar
+    [x] Pasando un producto al side bar para detalles
+    [] Diseño
+        [] Formato de slider, centrado y contenido
+        [] Titulo h2
+        [] Precio en color diferente
+        [] Descripcion con formato y responsivo con rem
+        [] Formato a boton Agregar al carrito
+        []  Formato al boton de cerrar, extrema der -> extrema izq  
 
 ### Swiper Slider
 
@@ -14,16 +64,12 @@ Para la sección de detallar producto.
 
 Cargar elementos de terceros optimizados y animados es necesario para el uso de la web actual.
 
-[] Swiper
-    [] Leer docs
-    [] Ver un tutorial
-    [] Aplicar lo que dicen los docs y tutorial
-    ...
-    [] Escribir los errores que salgan
-    [] Resolver los errores que salgan
-    ...
-    [] Mostrar el slider con las imágenes de cada productos
-[] Single Product
+[x] Swiper
+    [x] Leer docs
+    [x] Ver un tutorial
+    [x] Aplicar lo que dicen los docs y tutorial
+    [x] Mostrar el slider con las imágenes de cada productos
+    [] Slider controls
 
 ### Angular Instructions
 
