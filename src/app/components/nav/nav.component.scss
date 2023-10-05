@@ -1,52 +1,66 @@
-.header {
-    overflow: hidden;
-    background-color: #f1f1f1;
-    padding: 20px 10px;
-    a {
-      float: left;
-      color: black;
-      text-align: center;
-      padding: 12px;
-      text-decoration: none;
-      font-size: 1.8rem;
-      border-radius: 4px;
-      &.logo {
-        font-size: 25px;
-        font-weight: bold;
-      }
-    }
-    a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    a.active {
-      background-color: dodgerblue;
-      color: white;
-    }
-    .header-right {
-      float: right;
-    }
-  }
-.cart{
-  height: 20px;
+@import url('../../../styles.scss');
+/* app-nav.component.css */
+.app-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background);
+  color: var(--black);
+  padding: 10px 20px;
 }
-  
-/* Medium only */
-@media screen and (min-width: 40em) and (max-width: 63.9375em) {
-    .show-mobile {
-      display: none;
-    }
-    .hide-mobile {
-      display: block;
-    }
+
+.app-logo a {
+  color: var(--orange);
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.app-links {
+  display: flex;
+  gap: 20px;
+}
+
+.app-links a {
+  color: var(--orange);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.app-mobile-menu button {
+  background-color: transparent;
+  color: var(--orange);
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.app-mobile-links {
+  display: none;
+}
+
+.app-mobile-links a {
+  display: block;
+  padding: 10px 0;
+  color: var(--orange);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Media queries for responsive design */
+
+@media (max-width: 768px) {
+  .app-mobile-menu button {
+    display: block;
   }
-  
-/* Large and up */
-@media screen and (min-width: 64em) {
-    .show-mobile {
-        display: none;
-    }
-    .hide-mobile {
-        display: block;
-    }
+  .app-links {
+    display: none;
+  }
+  .app-mobile-links {
+    display: block;
+  }
+}
+@media (min-width: 1023px){
+  .app-mobile-menu{
+    display: none;
+  }
 }

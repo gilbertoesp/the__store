@@ -16,16 +16,17 @@
     [] Lista de productos en formato reducido
     [] Total al fondo mas IVA y botones (sin funcion) de pasar a pagar
 
-### Atrapando errores
-    [x] Utiliza practicas de `catchError` de la libreria RxJS en pipe
-    [x] Describe errores con `HttpErrorResponse` con su status `500` o `404` con `HttpStatusCode`
-
 ### Formato al catalago
-    [] Precio en diferente color cuando hover
-    [] Titulo con espaciado y negritas
-    [] Borrar fecha y hora
-    [] Formato al boton Ver detalle, y moverlo al lador derecho
-    [] Tablet breakpoint a 768px
+    [x] Titulo estilos
+    [x] Borrar fecha y hora
+    [x] Formato al boton Ver detalle, y moverlo al lador derecho y en la imagen y el titulo
+    [x] Tablet breakpoint a 768px
+    [x] boton agregar al carrito
+
+### Formato a navegacion
+ [x] Colpaso de menu en mobile tablet
+ [x] font style
+ [] icono de carrito
 
 ### Modificando un producto
     [] En Ver Detalle, boton que abra un formulario con los datos del producto a modificar

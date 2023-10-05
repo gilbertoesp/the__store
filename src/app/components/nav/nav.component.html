@@ -1,13 +1,22 @@
-<div class="header__container">
-    <header class="header">
-        <a href="#" class="logo">The Store</a>
-        <div class="header__right">
-            <a href="#">Inicio</a>
-            <a href="#">Catalogo</a>
-            <a href="#">Acerca</a>
-        </div>
-        <div class="cart__container">
-            <!-- Aqui va el logo de un carrito y activa un sidebar -->
-        </div>
-    </header>
-</div>
+<!-- app-nav.component.html -->
+<nav class="app-nav">
+    <div class="app-logo">
+      <a routerLink="/">THE Store🛒</a>
+    </div>
+    <div class="app-links">
+      <a routerLink="/home">Inicio</a>
+      <a routerLink="/about">Acerca</a>
+      <a routerLink="/">Categorías</a>
+      <a routerLink="/contact">Contacto</a>
+    </div>
+    <div class="app-mobile-menu">
+      <button (click)="toggleMenu()">☰</button>
+      <div class="app-mobile-links" *ngIf="showMenu">
+        <a routerLink="/home" (click)="toggleMenu()">Inicio</a>
+        <a routerLink="/about" (click)="toggleMenu()">Acerca</a>
+        <a routerLink="/" (click)="toggleMenu()">Categorías</a>
+        <a routerLink="/contact" (click)="toggleMenu()">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  

@@ -1,12 +1,26 @@
-img {
-    width: 100%;
+
+@import url(../../../styles.scss);
+
+
+.img__container{
+    text-align: center;
 }
 
-p, h2{
-    margin: 0 auto;
-    font-size: 1.6rem;
+img{
+    max-width: 100%;
 }
 
-button {
-    font-size: 1.4rem;
+.product_title__container p, h2{
+    text-align: right;
+    font-size: 1.3rem;
+    line-height: 1.1rem;
+    color: var(--enfasis);
+}
+
+.product-card__carrito_compra{
+    text-align: center;
+}
+
+.product-card__carrito_compra button{
+    font-size: 1rem;
 }

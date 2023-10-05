@@ -8,15 +8,20 @@ import { StoreService } from 'src/app/services/store.service';
 })
 export class NavComponent {
   counter = 0;
+  showMenu = false;
 
   constructor(
     private storeService: StoreService
   ) { }
 
-    ngOnInit(): void{
-      this.storeService.myCart$.subscribe(
-        products => { this.counter = products.length}
-      )
-    }
+  ngOnInit(): void{
+    this.storeService.myCart$.subscribe(
+      products => { this.counter = products.length}
+    )
+  }
+
+  toggleMenu(){
+    this.showMenu = !this.showMenu;
+  }
 
 }
