@@ -1,15 +1,18 @@
 .catalogo__container{
     display: flex;
     flex-direction: column;
+    button{
+        font-size: 1.6rem;
+    }
 }
 
 .product-detail__container{
+    text-align: right;
     position: fixed;
     top: 0;
-    left: 50%;
+    left: 1%;
     bottom: 0;
     right: 0;
-    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -18,16 +21,21 @@
     &.active{
       transform: translateX(0);
     }
+    button{
+        font-size: 1.6rem;
+        margin: 8px;
+    }
 }
-button{
-    font-size: 2rem;
-}
+
 //tablet
 @media screen and (min-width: 768px) and (max-width: 1023px){
     .catalogo__container{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 15px;
+    }
+    .product-detail__container{
+        left: 50%;
     }
 }
 
@@ -37,5 +45,8 @@ button{
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 15px;
+    }
+    .product-detail__container{
+        left: 50%;
     }
 }

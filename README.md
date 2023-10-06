@@ -1,7 +1,11 @@
 # FakeStore
 
 ## Iteraciones del desarrollo
+### Septiembre 2023
 ![The Store]('./../src/assets/screenshots/The__Store_sept18.png')
+
+### Octubre 2023
+![The Store]('./../src/assets/screenshots/The__Store_oct5.png')
 
 ## Features
 
@@ -48,13 +52,13 @@
 [x] Single Product
     [x] Side bar
     [x] Pasando un producto al side bar para detalles
-    [] Diseño
-        [] Formato de slider, centrado y contenido
-        [] Titulo h2
+    [x] Diseño
+        [x] Formato de slider, centrado y contenido
+        [x] Titulo h2
         [] Precio en color diferente
-        [] Descripcion con formato y responsivo con rem
-        [] Formato a boton Agregar al carrito
-        []  Formato al boton de cerrar, extrema der -> extrema izq  
+        [x] Descripcion con formato y responsivo con rem
+        [x] Formato a boton Agregar al carrito
+        [x]  Formato al boton de cerrar, extrema der -> extrema izq  
 
 ### Swiper Slider
 

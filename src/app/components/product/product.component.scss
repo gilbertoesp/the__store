@@ -12,15 +12,15 @@ img{
 
 .product_title__container p, h2{
     text-align: right;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     line-height: 1.1rem;
     color: var(--enfasis);
 }
 
 .product-card__carrito_compra{
     text-align: center;
-}
+    button{
+        font-size: 1.6rem;
+    }
 
-.product-card__carrito_compra button{
-    font-size: 1rem;
 }

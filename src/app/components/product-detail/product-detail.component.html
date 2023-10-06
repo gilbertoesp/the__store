@@ -1,16 +1,27 @@
 <!-- slider recorriendo un producto -->
-<swiper-container>
+<div class="slider">
+    <swiper-container
+    loop="true"
+    navigation="true"
+    pagination="true"
+    scrollbar="true"
+    centered-slides="true"
+    slides-per-view="auto"
+    >
     <swiper-slide *ngFor="let img of product.images">
         <img [src]="img" alt="" srcset="">
     </swiper-slide>
 </swiper-container>
+</div>
 
-<!-- titulo -->
-<h3>{{product.title}}</h3>
-<!-- precio pipeline use-->
-<b>{{product.price | currency}}</b>
-<!-- descripcion -->
-<p>{{product.description}}</p>
-<!-- agregar al carrito -->
-<button>Agregar al carrito</button>
-<button>Editar</button>
+<div class="detail">
+    <!-- titulo -->
+    <h3>{{product.title}}</h3>
+    <!-- precio pipeline use-->
+    <b>{{product.price | currency}}</b>
+    <!-- descripcion -->
+    <p>{{product.description}}</p>
+    <!-- agregar al carrito -->
+    <button>Agregar al carrito</button>
+    <button>Editar</button>
+</div>
