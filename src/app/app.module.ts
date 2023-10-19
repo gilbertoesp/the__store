@@ -13,6 +13,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 // Swiper config. Register()
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { register } from 'swiper/element/bundle';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 register();
 
 @NgModule({
@@ -22,7 +24,9 @@ register();
     ProductComponent,
     CatalogoComponent,
     NavComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
