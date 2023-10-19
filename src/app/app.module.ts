@@ -16,6 +16,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 register();
 
 @NgModule({
@@ -37,7 +38,8 @@ register();
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'catalogo', component: CatalogoComponent}
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
