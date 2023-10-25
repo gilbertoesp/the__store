@@ -1,10 +1,22 @@
-<div class="login__contenedor">
-    <form action="submit">
-        <input type="email" name="email" id="email">
-        <input type="password" name="password" id="password">
-        <div class="login__botones_contenedor">
-            <button type="submit">Entrar</button>
-            <button>Registrar</button>
+<!-- login.component.html -->
+<div class="login-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div>
+        <label for="username">Correo eléctronico: </label>
+        <input type="text" id="username" name="username" required [(ngModel)]="email" #emailInput="ngModel">
+        <div class="error-message" *ngIf="emailInput.dirty && emailInput.invalid">
+          <span *ngIf="emailInput.pristine">Username is required</span>
         </div>
+      </div>
+      <div>
+        <label for="password">Contraseña: </label>
+        <input type="password" id="password" name="password" required [(ngModel)]="password" #passwordInput="ngModel">
+        <div class="error-message" *ngIf="passwordInput.dirty && passwordInput.invalid">
+          <span *ngIf="passwordInput.pristine">Password is required</span>
+        </div>
+      </div>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
     </form>
-</div>
+  </div>
+  
